@@ -7,12 +7,9 @@ large = 0
 small = 0
 
 if a >= b:
-    large = a
-    small = b
+    large, small = a, b
 else:
-    large = b
-    small = a
-
+    large, small = b, a
 
 while True:
     surplus = large % small
