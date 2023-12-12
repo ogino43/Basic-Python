@@ -1,26 +1,37 @@
-a = int(input("aの値を入力: "))
-b = int(input("bの値を入力: "))
+a = float(input("aの値を入力: "))
 
 # TODO
 
-for i in [a, b]:
-    if i == 1:
-        print('%dは素数ではありません。' % i)
 
-    elif i == 3:
-        print('%dは素数です。' % i)
+def hantei(n):
+    if n.is_integer() is False:
+        print("error")
+        return False
 
-    elif i % 2 != 0:
-        for k in range(2, (i+1)//2):
-            if a % k == 0:
-                print('%dは素数ではありません。' % i)
+    elif n <= 0:
+        print("error")
+        return False
+
+    elif n == 1:
+        return False
+
+    elif n == 3:
+        return True
+
+    elif n % 2 != 0:
+        for k in range(2, (n+1)//2):
+            if n % k == 0:
+                return False
                 break
-            elif k == ((i+1)//2)-1:
-                print('%dは素数です。' % i)
+            elif k == ((n+1)//2)-1:
+                return True
                 break
 
-    elif i == 2:
-        print('%dは素数です。' % i)
+    elif n == 2:
+        return True
 
     else:
-        print('%dは素数ではありません。' % i)
+        return False
+
+
+print(hantei(a))
